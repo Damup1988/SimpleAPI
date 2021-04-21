@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool: default
-  agent.name: SRV1
+  #agent.name: SRV1
   #vmImage: ubuntu-latest
 
 variables:
