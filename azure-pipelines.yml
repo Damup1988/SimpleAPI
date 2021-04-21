@@ -6,8 +6,9 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+pool: default
+  agent.name: SRV1
+  #vmImage: ubuntu-latest
 
 variables:
   buildConfiguration: 'Release'
