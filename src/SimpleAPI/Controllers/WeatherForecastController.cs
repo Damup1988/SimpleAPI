@@ -40,5 +40,10 @@ namespace SimpleAPI.Controllers
         {
             return "Damir";
         }
+
+        public string getStringSecond()
+        {
+            return "Damir Safarov";
+        }
     }
 }
