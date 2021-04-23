@@ -25,8 +25,14 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 
 - task: UseDotNet@2
+  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
   inputs:
     packageType: 'sdk'
+    command: publish
+    publishWebProjects: false
+    projects: 'src/SimpleAPI/SimpleAPI.csproj'
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
     version: 
 
 - task: PublishBuildArtifacts@1
