@@ -24,14 +24,10 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStaginDirectory)'
+- task: UseDotNet@2
   inputs:
-    command: publish
-    publishWebProjects: false
-    projects: 'src/SimpleAPI/SimpleAPI.csproj'
-    arguments: '--comfiguration $(buildConfiguration) --output $(Build.ArtifactStaginDIrectory)'
-    zipAfterPublish: true
+    packageType: 'sdk'
+    version: 
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
